@@ -9,11 +9,7 @@ public class Product {
         this.price = price;
     }
 
-    public double calculateTax(Country country) {
-        return this.price * country.tax;
-    }
-
-    public double calculateTaxForOrder(int quantity, Country country) {
-        return quantity * calculateTax(country);
+    public double getPrice() {
+        return price;
     }
 }
