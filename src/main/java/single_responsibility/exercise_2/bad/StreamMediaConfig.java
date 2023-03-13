@@ -12,9 +12,11 @@ public abstract class StreamMediaConfig extends MediaConfig {
         return duration;
     }
 
-//    public String getPrettyDuration() {
-//        throw new RuntimeException("Implement me");
-//    }
-
-    //hacer varios casos para probar varis escenarios.
+    public String getPrettyDuration() {
+        int hours = duration/60;
+        int minutes = duration % 60;
+        String hoursString = String.format("%02d", hours);
+        String minutesString = String.format("%02d", minutes);
+        return hoursString + ":" + minutesString;
+    }
 }
