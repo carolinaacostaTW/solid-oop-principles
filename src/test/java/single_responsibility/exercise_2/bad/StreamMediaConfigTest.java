@@ -14,7 +14,7 @@ class StreamMediaConfigTest {
     private static final String TITLE = "Title";
 
     private static class ClassUnderTest extends StreamMediaConfig {
-        public ClassUnderTest(String title, int duration) {
+        public ClassUnderTest(final String title, final int duration) {
             super(title, duration);
         }
     }
@@ -31,10 +31,10 @@ class StreamMediaConfigTest {
 
     @ParameterizedTest
     @MethodSource("durationAndResults")
-    public void getPrettyDuration_shouldReturnDurationFormatted(int duration,
-                                                                String prettyDuration){
+    public void getPrettyDuration_shouldReturnDurationFormatted(final int duration,
+                                                                final String prettyDuration){
 
-        var stream = new ClassUnderTest(TITLE, duration);
+        final var stream = new ClassUnderTest(TITLE, duration);
 
         assertEquals(prettyDuration, stream.getPrettyDuration());
     }

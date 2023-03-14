@@ -10,4 +10,9 @@ public class Square extends Shape {
     public double getSide() {
         return side;
     }
+
+    @Override
+    public double calculateArea() {
+        return 0;
+    }
 }

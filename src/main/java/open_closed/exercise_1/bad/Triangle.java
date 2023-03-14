@@ -22,4 +22,14 @@ public class Triangle extends Shape {
     public double getC() {
         return c;
     }
+
+    @Override
+    public double calculateArea() {
+        var semiperimeter = (a + b + c) / 2;
+        return Math.sqrt(
+                semiperimeter *
+                        (semiperimeter - a) *
+                        (semiperimeter - b) *
+                        (semiperimeter - c));
+    }
 }
