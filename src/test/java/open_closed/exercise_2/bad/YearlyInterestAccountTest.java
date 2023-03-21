@@ -5,13 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CheckingAccountTest {
-
-    private CheckingAccount account;
+class YearlyInterestAccountTest {
+    private YearlyInterestAccount account;
 
     @BeforeEach
     public void setUp(){
-        account = new CheckingAccount(1000);
+        account = new YearlyInterestAccount(1000);
     }
 
     @Test
@@ -26,16 +25,16 @@ class CheckingAccountTest {
     void withdraw() {
         final var result = account.withdraw(500);
 
-        assertEquals(499.85,  result);
-        assertEquals(499.85,  account.getBalance());
+        assertEquals(498.5,  result);
+        assertEquals(498.5,  account.getBalance());
     }
 
     @Test
     void applyInterest() {
         final var result = account.applyInterest(5);
 
-        assertEquals(1000,  result);
-        assertEquals(1000,  account.getBalance());
+        assertEquals(1276.2815625000003,  result);
+        assertEquals(1276.2815625000003,  account.getBalance());
     }
 
     @Test
@@ -44,8 +43,8 @@ class CheckingAccountTest {
 
         final var result = account.transfer(500, basicAccount);
 
-        assertEquals(500.0,  result);
-        assertEquals(500.0,  account.getBalance());
+        assertEquals(497.5,  result);
+        assertEquals(497.5,  account.getBalance());
     }
 
     @Test
@@ -54,8 +53,8 @@ class CheckingAccountTest {
 
         final var result = account.transfer(500, checkingAccount);
 
-        assertEquals(500.0,  result);
-        assertEquals(500.0,  account.getBalance());
+        assertEquals(497.5,  result);
+        assertEquals(497.5,  account.getBalance());
     }
 
     @Test
@@ -64,17 +63,18 @@ class CheckingAccountTest {
 
         final var result = account.transfer(700, monthlyInterestAccount);
 
-        assertEquals(300.0,  result);
-        assertEquals(300.0,  account.getBalance());
+        assertEquals(297.5,  result);
+        assertEquals(297.5,  account.getBalance());
     }
 
     @Test
-    void testTransfer1() {
+    void transferYearlyInterestAccount() {
         final var yearlyInterestAccount = new YearlyInterestAccount(200);
 
         final var result = account.transfer(600, yearlyInterestAccount);
 
-        assertEquals(400.0,  result);
-        assertEquals(400.0,  account.getBalance());
+        assertEquals(397.5,  result);
+        assertEquals(397.5,  account.getBalance());
     }
+
 }
