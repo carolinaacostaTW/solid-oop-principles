@@ -6,8 +6,4 @@ public class CheckingAccount extends Account{
     public CheckingAccount(double balance) {
         super(balance, WITHDRAW_FEE, 0.0);
     }
-
-    public double applyInterest(int numberOfMonths) {
-        return balance;
-    }
 }

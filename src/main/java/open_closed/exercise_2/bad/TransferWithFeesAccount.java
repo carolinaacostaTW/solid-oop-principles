@@ -6,8 +6,4 @@ public class TransferWithFeesAccount extends Account {
     public TransferWithFeesAccount(double balance) {
         super(balance, 0.0, TRANSFER_FEE);
     }
-
-    public double applyInterest(int numberOfMonths) {
-        return balance;
-    }
 }

@@ -44,4 +44,8 @@ public abstract class Account {
         return balance;
     }
 
+    public double applyInterest(int numberOfMonths) {
+        return balance;
+    }
+
 }

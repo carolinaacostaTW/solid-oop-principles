@@ -9,6 +9,7 @@ public class YearlyInterestAccount extends Account {
         super(balance, WITHDRAW_FEE, TRANSFER_FEE);
     }
 
+    @Override
     public double applyInterest(int numberOfYears) {
         double compoundInterest = java.lang.Math.pow((1 + YEARLY_INTEREST), numberOfYears);
         balance = balance * compoundInterest;

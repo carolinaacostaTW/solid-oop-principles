@@ -48,4 +48,14 @@ class AccountTest {
         assertEquals(499.8, account.getBalance());
     }
 
+    @Test
+    void applyInterest() {
+        AccountUnderTest account = new AccountUnderTest(1000);
+
+        final var result = account.applyInterest(5);
+
+        assertEquals(1000,  result);
+        assertEquals(1000,  account.getBalance());
+    }
+
 }

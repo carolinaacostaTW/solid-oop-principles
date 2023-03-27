@@ -1,7 +1,5 @@
 package open_closed.exercise_2.bad;
 
-import java.util.UUID;
-
 public class MonthlyInterestAccount extends Account {
 
     private static final double WITHDRAW_FEE = 1;
@@ -18,6 +16,7 @@ public class MonthlyInterestAccount extends Account {
         return balance;
     }
 
+    @Override
     public double applyInterest(int numberOfMonths) {
         double compoundInterest = java.lang.Math.pow((1 + MONTHLY_INTEREST), numberOfMonths);
         balance = balance * compoundInterest;

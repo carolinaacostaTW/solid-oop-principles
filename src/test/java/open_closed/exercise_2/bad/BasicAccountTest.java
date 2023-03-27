@@ -14,11 +14,11 @@ class BasicAccountTest {
         account = new BasicAccount(1000);
     }
 
-    @Test
-    void applyInterest() {
-        final var result = account.applyInterest(5);
-
-        assertEquals(1000,  result);
-        assertEquals(1000,  account.getBalance());
-    }
+//    @Test
+//    void applyInterest() {
+//        final var result = account.applyInterest(5);
+//
+//        assertEquals(1000,  result);
+//        assertEquals(1000,  account.getBalance());
+//    }
 }

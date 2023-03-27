@@ -8,11 +8,7 @@ public class BasicAccount extends Account{
     public BasicAccount(double balance) {
         super(balance, WITHDRAW_FEE, TRANSFER_FEE);
     }
-
-    public double applyInterest(int numberOfMonths) {
-        return balance;
-    }
-
+    
 }
 
 //    public double transfer(double amount, BasicAccount toAccount){
